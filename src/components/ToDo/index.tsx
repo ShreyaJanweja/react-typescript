@@ -1,15 +1,21 @@
 import React from 'react';
 import ToDoItem  from './ToDoItem';
 import './style.css';
-const ToDo: React.FC = ()=>{
+
+interface ToDoitems{
+    id:number;
+    title:string;
+}
+interface ToDoProps{
+    items: ToDoitems[];
+}
+const ToDo: React.FC<ToDoProps> = (props)=>{
     return (
-        <div className='todo-container'>
+        <div className='todo-container' onClick={(e)=>alert("Clicked")}>
             <ol>
-                <ToDoItem />
-                <ToDoItem />
-                <ToDoItem />
-                <ToDoItem />
-                <ToDoItem />
+                {
+                    props.items.map(item => <ToDoItem key={item.id} title={item.title}/>)
+                }
             </ol>
         </div>
     );

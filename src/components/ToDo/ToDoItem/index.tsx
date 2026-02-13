@@ -1,8 +1,13 @@
 import React from 'react';
 import './style.css';
-const ToDoItem: React.FC = ()=>{
+
+interface ToDoItemProps{
+    title: string;
+    time?: number;
+}
+const ToDoItem: React.FC<ToDoItemProps> = (props) => {
     return (
-        <li>Code</li>
+        <li>{props.title}</li>
     );
 }
 export default ToDoItem;
