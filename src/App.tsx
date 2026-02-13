@@ -1,5 +1,6 @@
 import React from 'react';
 import ToDo from './components/ToDo';
+import Counter from './components/Counter';
 
 const myToDoItems = [
     {
@@ -17,6 +18,7 @@ const App: React.FC = () => {
             <ToDo items={myToDoItems}/>
             <ToDo items={myToDoItems}/>
             <ToDo items={myToDoItems}/>
+            <Counter/>
         </div>
     );
 }
