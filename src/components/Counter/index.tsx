@@ -6,7 +6,11 @@ const Counter: React.FC = (props) =>{
     useEffect(()=>{
         console.log('Counter element');
     },[])
-
+//useEffect is a hook that allows us to perform side effects in our functional components.
+//We can also specify dependencies for the effect, which means that the effect will only run when those dependencies change. 
+//In this example, we have an empty dependency array, which means that the effect will only run once when the component mounts. If we had specified a dependency, such as [counter], then the effect would run every time the counter state changes.
+//empty Dependency array means a Whole component
+//react component phases - inintialization , mounting , updation , unmounting 
     useEffect(()=>{
         console.log("user updated count");
     },[counter])
